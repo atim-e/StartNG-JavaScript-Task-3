@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Task 3</title>
 </head>
+
 <body>
-    
+
     <script>
-// you'll need a loop. You'll also need the modulus operator (from task 1), you'll need conditional statements (like the if statement)
+ 
+        // FUNCTION THAT TAKES A NUMBER & CHECKS IF 1 TO THAT NUMBER ARE DIVISIBLE BY 2, 3, 5 & REPLACE WITH APPROPRIATE WORD
 
-// A possible approach is for your function create an array, and then push either a number or the words depending on your if statements afterwards you return the array
+        const randomNumber = (num) => {
 
-// WRITE A FUNCTION THAT A WHOLE NUMBER & CHECKS IF 1 TO THAT NUMBER ARE DIVISIBLE BY 2, 3, 5 & REPLACE WITH APPROPRIATE WORD
+            // NEW ARRAY TO CONTAIN ALL NUMBERS FROM 1 TO CHOSEN NUMBER, INCLUDING DIVISIBLE NUMBERS REPLACED WITH WORDS
 
+            let newArray = [];
 
+            //LOOP THROUGH NUMBERS AND REPLACE WITH WORD OR LEAVE UNCHANGED
 
+            for (let x = 1; x <= num; x++) {
 
+                if (x % 2 === 0 && x % 3 === 0 && x % 5 === 0) {
+                    newArray.push('yu-gi-oh');
 
+                } else if (x % 2 === 0 && x % 3 === 0) {
+                    newArray.push('yu-gi');
 
+                } else if (x % 2 === 0 && x % 5 === 0) {
+                    newArray.push('yu-oh');
 
+                } else if (x % 3 === 0 && x % 5 === 0) {
+                    newArray.push('gi-oh');
 
-// RETURN ARRAY CONTAINING ALL NUMBERS FROM 1 TO CHOSEN NUMBER WITH DIVISIBLE NUMBERS REPLACED WITH WORDS
+                } else if (x % 2 === 0) {
+                    newArray.push('yu');
 
+                } else if (x % 3 === 0) {
+                    newArray.push('gi');
 
+                } else if (x % 5 === 0) {
+                    newArray.push('oh');
 
+                } else {
+                    newArray.push(x);
+                }
 
+                // SHOW ARRAY ON CONSOLE
 
+            }
+            console.log (newArray);
 
+            return newArray;
+        }
 
-// CALL THE FUNCTION & PASS 100 AS AN ARGUMENT
+        // CALL THE FUNCTION & PASS A RANDOM NUMBER AND 100 AS ARGUMENTS
 
-
-
-
-
-
-
-
-
-// CALL THE FUNCTION & PASS A RANDOM NUMBER
-
+        randomNumber (70);
+        randomNumber (100);
 
     </script>
 
 </body>
+
 </html>
